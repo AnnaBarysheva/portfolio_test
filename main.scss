@@ -4,45 +4,45 @@
   box-sizing: border-box;
 }
 
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/assets/fonts/Poppins-Thin.ttf") format("truetype");
-//   font-weight: 300;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/asssets/fonts/Poppins-Thin.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/assets/fonts/Poppins-Regular.ttf") format("truetype");
-//   font-weight: 400;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/asssets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/assets/fonts/Poppins-Medium.ttf") format("truetype");
-//   font-weight: 500;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/asssets/fonts/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/assets/fonts/Poppins-SemiBold.ttf") format("truetype");
-//   font-weight: 600;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/asssets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
-// @font-face {
-//   font-family: "Poppins";
-//   src: url("/assets/fonts/Poppins-Bold.ttf") format("truetype");
-//   font-weight: 700;
-//   font-style: normal;
-//   font-display: swap;
-// }
+@font-face {
+  font-family: "Poppins";
+  src: url("/asssets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 a {
   text-decoration: none;
@@ -56,39 +56,48 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #f5f7fa;
-  font-family: Raleway;
+  color: #000;
+  font-family: Poppins;
   font-weight: 400;
   font-size: 16px;
   box-sizing: border-box;
 }
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+}
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 60px;
+  margin: 0;
+}
 
 .promo {
-  width: 100%; 
+  width: 100%;
   display: flex;
-  justify-content: center; 
+  justify-content: center;
   background-image: url("/asssets/images/background.jpg");
-  background-size: 1920px 100%; 
-  background-position: center center; 
+  background-size: 1920px 100%;
+  background-position: center center;
   background-repeat: no-repeat;
-  height: 800px;  
+  height: 800px;
   &__content {
-    width: 1140px; 
-   
-    margin: 60px auto; 
+    width: 1140px;
+    margin: 60px auto;
     padding: 16px;
     text-align: left;
     display: flex;
     flex-direction: column;
     gap: 10px;
-
-    
+    position: relative;
+    z-index: 0;
   }
-  &__text {
+  &__subtitle {
     margin-left: 10px;
-  }
-  &__title {
-    margin-bottom:  10px;
+    margin-left: 10px;
+    margin-top: 6px;
   }
 
   &__row {
@@ -120,12 +129,24 @@ body {
 .title {
   color: #000;
   font-family: Poppins;
-  font-size: 48px;
+  font-size: 36px;
   font-style: normal;
   font-weight: 700;
   line-height: 60px;
+  position: relative;
+  z-index: 0;
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--brand-color);
+    z-index: -1;
+  }
 }
-.text {
+.subtitle {
   position: relative;
   color: #000;
   font-family: Poppins;
@@ -134,27 +155,33 @@ body {
   font-weight: 700;
   line-height: 24px;
   z-index: 0;
-  &:before {
-    content: "";
-    position: absolute;
-    left: 10px; 
-    top: 50%; 
-    transform: translate(-50%, -50%); 
-    width: 36px ;
-    height: 36px;
-    border-radius: 50%;
-    background: var(--brand-color);
-    z-index: -1;
-  }
 }
 
-span{
+.text {
+  color: #000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+span {
   color: #000;
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 21px;
+}
+
+.icon-bg {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  z-index: -1;
 }
 
 .about {
@@ -168,8 +195,86 @@ span{
   text-align: center;
 }
 
-.about__content {
-  max-width: 1040px;
+.about {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  &__content {
+    width: 1040px;
+    margin: 20px auto;
+    // padding: 16px;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+  }
+  &__image {
+    width: 400px;
+    height: 600px;
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    position: relative;
+    z-index: 0;
+  }
+  &__subtitle {
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+  &__title {
+    margin-bottom: 10px;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+    grid-auto-rows: 116px;
+  }
 }
 
-
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  // gap:7px;
+  &__icon {
+    display: flex;
+    position: relative;
+    width: 60px;
+    flex-shrink: 0;
+    z-index: 0;
+    svg {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+    }
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    gap: 5px;
+  }
+  &__title {
+    color: #000;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 21px;
+    text-align: left;
+  }
+  &__text {
+    color: #000;
+    font-family: Poppins;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 18px;
+  }
+}
