@@ -62,7 +62,7 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   &.menu-open {
-    overflow: hidden; 
+    overflow: hidden;
   }
 }
 .main {
@@ -75,10 +75,10 @@ h1 {
   font-weight: 700;
   line-height: 60px;
   margin: 0;
-  @media (max-width: 1024px) {      
+  @media (max-width: 1024px) {
     font-size: 26px;
     line-height: 39px;
-  }  
+  }
 }
 
 .promo {
@@ -117,13 +117,7 @@ h1 {
     gap: 20px;
   }
 
-  &__button {
-    background: var(--brand-color);
-    border: none;
-    padding: 12px 24px;
-    cursor: pointer;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  }
+  
 
   &__link {
     cursor: pointer;
@@ -226,56 +220,62 @@ span {
   background: var(--brand-color);
   z-index: -1;
   &--small {
-    width: 16px; 
-    height: 16px; 
+    width: 16px;
+    height: 16px;
   }
 }
 
 .icon-line {
-  width: 2px; 
-  height: 100%; 
-  background-color: #000; 
-  &--small{        
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+  &--small {
     height: 2px;
     width: 42px;
   }
 }
 
+.button {
+  background: var(--brand-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+
 .about {
   min-height: 100vh;
   background: #fff;
-  padding: 32px 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.about {
   width: 100%;
-  display: flex;
-  justify-content: center;
   height: 600px;
   &__content {
-    max-width: 1040px;    //?
-    width:100%;
+    max-width: 1040px; //?
+    width: 100%;
     margin: 20px auto;
     // padding: 16px;
     display: flex;
     flex-direction: row;
     gap: 70px;
-    @media (max-width: 1024px) {      
+    @media (max-width: 1024px) {
       flex-direction: column;
       gap: 20px;
-    }  
+    }
   }
   &__image {
     width: 400px;
     height: 600px;
-    @media (max-width: 1024px) {      
+    @media (max-width: 1024px) {
       height: 340px;
-    }  
+    }
   }
   &__description {
     display: flex;
@@ -300,8 +300,8 @@ span {
     margin-top: 20px;
     grid-auto-rows: 116px;
     @media (max-width: 1024px) {
-        grid-template-columns: 1fr; 
-        grid-auto-rows: auto;
+      grid-template-columns: 1fr;
+      grid-auto-rows: auto;
     }
   }
 }
@@ -328,7 +328,7 @@ span {
     flex-direction: column;
     width: 200px;
     gap: 5px;
-    &--custom{
+    &--custom {
       flex-grow: 1;
     }
   }
@@ -349,7 +349,7 @@ span {
     font-weight: 500;
     line-height: 18px;
   }
-  &__header{
+  &__header {
     display: flex;
   }
 }
@@ -387,20 +387,20 @@ span {
       transform: translate(-50%, -50%);
     }
   }
-  &__description{
+  &__description {
     display: flex;
     flex-direction: row;
     gap: 20px;
     justify-content: space-between;
   }
-  &__column{
+  &__column {
     display: flex;
     flex-direction: column;
     gap: 45px;
     position: relative;
     padding-left: 42px;
     z-index: 0;
-    h2{
+    h2 {
       color: rgb(0, 0, 0);
       font-family: Poppins;
       font-size: 20px;
@@ -412,38 +412,147 @@ span {
     .icon-line {
       position: absolute;
       top: 3px;
-      left: 0; 
-      &--small{        
+      left: 0;
+      &--small {
         left: -42px;
         top: 15px;
       }
     }
-    .icon-bg--small{
+    .icon-bg--small {
       position: absolute;
       top: 0;
-      left: -7px; 
+      left: -7px;
       z-index: 1;
-    } 
+    }
   }
-  &__item{
+  &__item {
     position: relative;
-    
-  display: flex; 
-  flex-direction: column; 
-  max-width: 375px;
-  gap:10px;
-  // align-items: flex-start; 
-  // gap: 16px; 
-  &__container{
-    display: flex; 
-    flex-direction: row; 
-    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    max-width: 375px;
+    gap: 10px;
+
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+    }
   }
-  }
-  
 }
 
+.contacts {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  width: 100%;
+  height: 600px;
+  &__content {
+    max-width: 1040px; 
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 70px;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    @media (max-wiёdth: 1024px) {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+  &__image{
+    height: 600px;
+    
+  }
+  &__description {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
+  &__subtitle {
+    margin-left: 10px;
+    margin-left: 10px;
+    margin-top: 6px;
+  }
+  &__socials{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  p{
+    color: rgb(0, 0, 0);
+    font-family: Poppins;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 21px;
+    letter-spacing: 0%;
+    text-align: left;
+  }
+  &__form{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  &__form-row{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    justify-content: space-between;
+  }
+  &__form-group{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 4px; 
+    box-sizing: border-box; 
+    border: 1px solid rgb(0, 0, 0);
+    z-index: 0;
+    flex-grow: 1;
+  }
+  &__label{
+    font-family: Poppins;
+    position: absolute;
+    top: -9px;
+    left: 12px;
+    display: inline-block;
+    padding: 0 8px;
+    height: 18px;
+    background: #fff;
+    color: rgb(0, 0, 0); 
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px; 
+    text-align: center; 
+    z-index: 1; 
+  }
+  &__input {
+    border: none;
+    outline: none;
+    font-size: 12px;
+    line-height: 18px; 
+    background: transparent;
+    color: #000;
+    &::placeholder {
+      color: #000; 
+  }
+}
+  &__button{
+    max-width: 219px;
+  }
 
+
+.contacts__input#message {
+  height: 190px;
+}
+}
 
 .overlay {
   position: fixed;
