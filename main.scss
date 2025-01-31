@@ -62,7 +62,7 @@ body {
   font-size: 16px;
   box-sizing: border-box;
   &.menu-open {
-    overflow: hidden; /* Блокирует прокрутку, когда меню открыто */
+    overflow: hidden; 
   }
 }
 .main {
@@ -75,6 +75,10 @@ h1 {
   font-weight: 700;
   line-height: 60px;
   margin: 0;
+  @media (max-width: 1024px) {      
+    font-size: 26px;
+    line-height: 39px;
+  }  
 }
 
 .promo {
@@ -88,7 +92,7 @@ h1 {
   height: 800px;
   &__content {
     width: 1140px;
-    margin: 60px auto;
+    margin: auto auto;
     padding: 16px;
     text-align: left;
     display: flex;
@@ -96,6 +100,9 @@ h1 {
     gap: 10px;
     position: relative;
     z-index: 0;
+    @media (max-width: 1024px) {
+      padding: auto 10px;
+    }
   }
   &__subtitle {
     margin-left: 10px;
@@ -218,6 +225,20 @@ span {
   border-radius: 50%;
   background: var(--brand-color);
   z-index: -1;
+  &--small {
+    width: 16px; 
+    height: 16px; 
+  }
+}
+
+.icon-line {
+  width: 2px; 
+  height: 100%; 
+  background-color: #000; 
+  &--small{        
+    height: 2px;
+    width: 42px;
+  }
 }
 
 .about {
@@ -237,16 +258,24 @@ span {
   justify-content: center;
   height: 600px;
   &__content {
-    width: 1040px;
+    max-width: 1040px;    //?
+    width:100%;
     margin: 20px auto;
     // padding: 16px;
     display: flex;
     flex-direction: row;
     gap: 70px;
+    @media (max-width: 1024px) {      
+      flex-direction: column;
+      gap: 20px;
+    }  
   }
   &__image {
     width: 400px;
     height: 600px;
+    @media (max-width: 1024px) {      
+      height: 340px;
+    }  
   }
   &__description {
     display: flex;
@@ -270,39 +299,9 @@ span {
     justify-items: center;
     margin-top: 20px;
     grid-auto-rows: 116px;
-  }
-}
-
-.benefit {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 600px;
-  &__content {
-    width: 1040px;
-    margin: 20px auto;
-    // padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-  }
-  &__header {
-    position: relative;
-    text-align: center;
-    .icon-bg {
-      display: flex;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
-  &__title {
-    &::after {
-      content: "";
-      display: flex;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
+    @media (max-width: 1024px) {
+        grid-template-columns: 1fr; 
+        grid-auto-rows: auto;
     }
   }
 }
@@ -329,6 +328,9 @@ span {
     flex-direction: column;
     width: 200px;
     gap: 5px;
+    &--custom{
+      flex-grow: 1;
+    }
   }
   &__title {
     color: #000;
@@ -347,7 +349,101 @@ span {
     font-weight: 500;
     line-height: 18px;
   }
+  &__header{
+    display: flex;
+  }
 }
+
+.benefit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 600px;
+  position: relative;
+  &__content {
+    width: 1040px;
+    margin: 20px auto;
+    // padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+  }
+  &__header {
+    position: relative;
+    text-align: center;
+    .icon-bg {
+      display: flex;
+      left: 50%;
+      top: 15%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__title {
+    &::after {
+      content: "";
+      display: flex;
+      left: 50%;
+      top: 120%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  &__description{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+  }
+  &__column{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    position: relative;
+    padding-left: 42px;
+    z-index: 0;
+    h2{
+      color: rgb(0, 0, 0);
+      font-family: Poppins;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 30px;
+      letter-spacing: 0%;
+      text-align: left;
+    }
+    .icon-line {
+      position: absolute;
+      top: 3px;
+      left: 0; 
+      &--small{        
+        left: -42px;
+        top: 15px;
+      }
+    }
+    .icon-bg--small{
+      position: absolute;
+      top: 0;
+      left: -7px; 
+      z-index: 1;
+    } 
+  }
+  &__item{
+    position: relative;
+    
+  display: flex; 
+  flex-direction: column; 
+  max-width: 375px;
+  gap:10px;
+  // align-items: flex-start; 
+  // gap: 16px; 
+  &__container{
+    display: flex; 
+    flex-direction: row; 
+    flex-grow: 1;
+  }
+  }
+  
+}
+
+
 
 .overlay {
   position: fixed;
