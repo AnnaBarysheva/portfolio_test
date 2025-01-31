@@ -44,6 +44,22 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src: url("/asssets/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("/asssets/fonts/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 a {
   text-decoration: none;
 }
@@ -115,9 +131,7 @@ h1 {
     justify-content: left;
     align-items: center;
     gap: 20px;
-  }
-
-  
+  }  
 
   &__link {
     cursor: pointer;
@@ -540,6 +554,7 @@ span {
     line-height: 18px; 
     background: transparent;
     color: #000;
+    
     &::placeholder {
       color: #000; 
   }
@@ -547,11 +562,21 @@ span {
   &__button{
     max-width: 219px;
   }
-
-
 .contacts__input#message {
   height: 190px;
+  vertical-align: top;
+  text-align: left;
+  resize: none; 
 }
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  position: absolute;
+  bottom: -18px; 
+  left: 0;
+  display: none; 
 }
 
 .overlay {
