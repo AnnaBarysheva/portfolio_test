@@ -84,7 +84,6 @@ body.menu-open {
   flex-direction: row;
   align-items: center;
   gap: 15px;
-  padding: 10px 0;
 }
 .socials__line {
   width: 70px;
@@ -116,6 +115,7 @@ body.menu-open {
 }
 
 h1 {
+  font-family: Montserrat;
   font-size: 48px;
   font-weight: 700;
   line-height: 60px;
@@ -126,6 +126,141 @@ h1 {
     font-size: 26px;
     line-height: 39px;
   }
+}
+
+.title {
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 60px;
+  position: relative;
+  z-index: 0;
+}
+.title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--brand-color);
+  z-index: -1;
+}
+@media (max-width: 1024px) {
+  .title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.subtitle {
+  position: relative;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  z-index: 0;
+}
+
+.text {
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+span {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+}
+
+.icon-bg {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--brand-color);
+  z-index: -1;
+}
+.icon-bg--small {
+  width: 16px;
+  height: 16px;
+}
+
+.icon-line {
+  width: 2px;
+  height: 100%;
+  background-color: #000;
+}
+.icon-line--small {
+  height: 2px;
+  width: 42px;
+}
+
+.button {
+  background: var(--brand-color);
+  border: none;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 21px;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.item__icon {
+  display: flex;
+  position: relative;
+  width: 60px;
+  flex-shrink: 0;
+  z-index: 0;
+}
+.item__icon svg {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.item__container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  gap: 5px;
+}
+.item__container--custom {
+  flex-grow: 1;
+}
+.item__title {
+  color: #000;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+  text-align: left;
+}
+.item__text {
+  color: #000;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+}
+.item__header {
+  display: flex;
+  font-family: Montserrat;
+  font-weight: 700;
 }
 
 .promo {
@@ -167,6 +302,7 @@ h1 {
   gap: 20px;
 }
 .promo__link {
+  font-family: Montserrat;
   cursor: pointer;
   text-decoration: none;
   color: #000;
@@ -201,96 +337,6 @@ h1 {
   border-radius: 2px;
   flex-shrink: 0;
   background: rgb(21, 24, 18);
-}
-
-.title {
-  color: #000;
-  font-family: Poppins;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 60px;
-  position: relative;
-  z-index: 0;
-}
-.title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 60px;
-  height: 3px;
-  background-color: var(--brand-color);
-  z-index: -1;
-}
-@media (max-width: 1024px) {
-  .title {
-    font-size: 24px;
-    line-height: 36px;
-  }
-}
-
-.subtitle {
-  position: relative;
-  color: #000;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  z-index: 0;
-}
-
-.text {
-  color: #000;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 21px;
-}
-
-span {
-  color: #000;
-  font-family: Poppins;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px;
-}
-
-.icon-bg {
-  position: absolute;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--brand-color);
-  z-index: -1;
-}
-.icon-bg--small {
-  width: 16px;
-  height: 16px;
-}
-
-.icon-line {
-  width: 2px;
-  height: 100%;
-  background-color: #000;
-}
-.icon-line--small {
-  height: 2px;
-  width: 42px;
-}
-
-.button {
-  background: var(--brand-color);
-  border: none;
-  padding: 12px 24px;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 21px;
-  cursor: pointer;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .about {
@@ -376,53 +422,6 @@ span {
   }
 }
 
-.item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.item__icon {
-  display: flex;
-  position: relative;
-  width: 60px;
-  flex-shrink: 0;
-  z-index: 0;
-}
-.item__icon svg {
-  position: absolute;
-  top: 15px;
-  left: 15px;
-}
-.item__container {
-  display: flex;
-  flex-direction: column;
-  width: 200px;
-  gap: 5px;
-}
-.item__container--custom {
-  flex-grow: 1;
-}
-.item__title {
-  color: #000;
-  font-family: Poppins;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px;
-  text-align: left;
-}
-.item__text {
-  color: #000;
-  font-family: Poppins;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 18px;
-}
-.item__header {
-  display: flex;
-}
-
 .benefit {
   width: 100%;
   display: flex;
@@ -482,8 +481,7 @@ span {
   z-index: 0;
 }
 .benefit__column h2 {
-  color: rgb(0, 0, 0);
-  font-family: Poppins;
+  font-family: Montserrat;
   font-size: 20px;
   font-weight: 700;
   line-height: 30px;
@@ -562,7 +560,6 @@ span {
 }
 .contacts__subtitle {
   margin-left: 10px;
-  margin-left: 10px;
   margin-top: 6px;
 }
 .contacts__socials {
@@ -571,8 +568,7 @@ span {
   gap: 20px;
 }
 .contacts p {
-  color: rgb(0, 0, 0);
-  font-family: Poppins;
+  font-family: Montserrat;
   font-size: 14px;
   font-weight: 700;
   line-height: 21px;
@@ -608,7 +604,7 @@ span {
   flex-grow: 1;
 }
 .contacts__label {
-  font-family: Poppins;
+  font-family: Montserrat;
   position: absolute;
   top: -9px;
   left: 12px;
@@ -616,7 +612,6 @@ span {
   padding: 0 8px;
   height: 18px;
   background: #fff;
-  color: rgb(0, 0, 0);
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
@@ -695,7 +690,7 @@ span {
   left: 0;
   width: 300px;
   height: 100%;
-  background-color: var(--brand-color, #ffa500);
+  background-color: var(--brand-color);
   display: flex;
   flex-direction: column;
   padding: 30px;
@@ -754,13 +749,12 @@ span {
   height: 15px;
   border: 1px solid rgb(0, 0, 0);
   border-radius: 50%;
-  background: rgba(196, 196, 196, 0);
 }
 .overlay .sidebar__link {
   text-decoration: none;
   color: #fff;
   display: flex;
-  font-family: Poppins;
+  font-family: Montserrat;
   font-size: 24px;
   font-weight: 700;
   line-height: 36px;

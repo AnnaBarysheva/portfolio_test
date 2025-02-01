@@ -119,13 +119,13 @@ function nthFibo(n) {
   if (n === 1) return 0;
   if (n === 2) return 1;
 
-  let a = 0, b = 1;
+  let x = 0, y = 1;
   for (let i = 3; i <= n; i++) {
-      let temp = a + b;
-      a = b;
-      b = temp;
+      let temp = x + y;
+      x = y;
+      y = temp;
   }
-  return b;
+  return y;
 }
 
 console.log("Fibonacci 1:", nthFibo(1)); 
