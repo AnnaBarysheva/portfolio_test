@@ -102,6 +102,27 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    &--github {
+      &:hover {          
+        svg path {
+          fill: #fff; 
+        }
+      }
+    }
+    &--instagram {
+      &:hover {          
+        svg path {
+          fill: var(--brand-color); 
+        }
+      }
+    }
+    &--facebook {
+      &:hover {          
+        svg path {
+          fill: #0866FF; 
+        }
+      }
+    }
   }
   @media (max-width: 1200px) {
     display: none;
@@ -171,12 +192,14 @@ h1 {
 }
 
 span {
+  position: relative;
   color: #000;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 21px;
+  z-index: 2
 }
 
 .icon-bg {
@@ -203,21 +226,58 @@ span {
 }
 
 .button {
+  position: relative;
   background: var(--brand-color);
   border: none;
-  padding: 12px 24px;
+  padding: 12px 12px;
   font-size: 14px;
   font-weight: 700;
   line-height: 21px;
   cursor: pointer;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  &:hover {
+    span {
+      color: var(--brand-color);
+    }
+    &::before {
+      animation: scaleCircle 1s ease forwards;
+    }
+  }
+  &:not(:hover) {
+    span {
+      transition: 0.3s ease 0.5s;
+    }
+    &::before {
+      animation: scaleDownCircle 1s ease forwards;
+    }
+  }
+  &::before {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 500px;
+    background: #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -60px;
+    transition: 1s ease forwards;
+    z-index: 0;
+    @media (max-width: 1024px) {
+      width: 500px;
+      height: 500px;
+      left: 10%;      
+    }
+  }
 }
 
 .item {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  // gap:7px;
   &__icon {
     display: flex;
     position: relative;
@@ -551,6 +611,9 @@ span {
     display: flex;
     flex-direction: row;
     gap: 20px;
+    a:hover{
+      color:#ffa501;
+    }
   }
   p {
     font-family: Montserrat;
@@ -637,9 +700,35 @@ span {
       display: flex;
     }
   }
+  &__social-link {
+    &--facebook {
+      &:hover {          
+        svg path {
+          fill: #0866FF; 
+        }
+      }
+    }
+    &--telegram {
+      &:hover {          
+        svg path {
+          fill: #3390EC; 
+        }
+      }
+    }
+    &--instagram {
+      &:hover {  
+        svg path {
+          fill: var(--brand-color); 
+        }
+      }
+    }
+  }
+  
+  
 }
 
 .error-message {
+  font-family: Montserrat;
   color: red;
   font-size: 12px;
   position: absolute;
@@ -739,6 +828,9 @@ span {
       text-align: left;
       text-transform: uppercase;
       margin-left: 45px;
+      &:hover {
+        color: #000;
+      }
     }
     &__socials {
       display: flex;
@@ -746,9 +838,56 @@ span {
       margin: auto auto 0 auto;
       gap: 15px;
     }
+    &__social-link {
+      &--github {
+        &:hover {          
+          svg path {
+            fill: #fff; 
+          }
+        }
+      }
+      &--instagram {
+        &:hover {  
+          background: #000;    
+          height: 20px;  
+          border-radius: 3px;  
+          svg path {
+            fill: var(--brand-color); 
+          }
+        }
+      }
+      &--facebook {
+        &:hover {          
+          svg path {
+            fill: #0866FF; 
+          }
+        }
+      }
+    }
     &__social-link img {
       width: 24px;
       height: 24px;
     }
+  }
+}
+
+@keyframes scaleCircle {
+  from {
+    width: 5px;
+    height: 5px;
+  }
+  to {
+    width: 300px;
+    height: 300px;
+  }
+}
+@keyframes scaleDownCircle {
+  from {
+    width: 300px;
+    height: 300px;
+  }
+  to {
+    width: 5px;
+    height: 5px;
   }
 }

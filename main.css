@@ -97,6 +97,15 @@ body.menu-open {
   justify-content: center;
   align-items: center;
 }
+.socials__social-link--github:hover svg path {
+  fill: #fff;
+}
+.socials__social-link--instagram:hover svg path {
+  fill: var(--brand-color);
+}
+.socials__social-link--facebook:hover svg path {
+  fill: #0866FF;
+}
 @media (max-width: 1200px) {
   .socials {
     display: none;
@@ -173,12 +182,14 @@ h1 {
 }
 
 span {
+  position: relative;
   color: #000;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 21px;
+  z-index: 2;
 }
 
 .icon-bg {
@@ -205,14 +216,50 @@ span {
 }
 
 .button {
+  position: relative;
   background: var(--brand-color);
   border: none;
-  padding: 12px 24px;
+  padding: 12px 12px;
   font-size: 14px;
   font-weight: 700;
   line-height: 21px;
   cursor: pointer;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.button:hover span {
+  color: var(--brand-color);
+}
+.button:hover::before {
+  animation: scaleCircle 1s ease forwards;
+}
+.button:not(:hover) span {
+  transition: 0.3s ease 0.5s;
+}
+.button:not(:hover)::before {
+  animation: scaleDownCircle 1s ease forwards;
+}
+.button::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 500px;
+  background: #ffffff;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -60px;
+  transition: 1s ease forwards;
+  z-index: 0;
+}
+@media (max-width: 1024px) {
+  .button::before {
+    width: 500px;
+    height: 500px;
+    left: 10%;
+  }
 }
 
 .item {
@@ -567,6 +614,9 @@ span {
   flex-direction: row;
   gap: 20px;
 }
+.contacts__socials a:hover {
+  color: #ffa501;
+}
 .contacts p {
   font-family: Montserrat;
   font-size: 14px;
@@ -661,8 +711,18 @@ span {
     display: flex;
   }
 }
+.contacts__social-link--facebook:hover svg path {
+  fill: #0866FF;
+}
+.contacts__social-link--telegram:hover svg path {
+  fill: #3390EC;
+}
+.contacts__social-link--instagram:hover svg path {
+  fill: var(--brand-color);
+}
 
 .error-message {
+  font-family: Montserrat;
   color: red;
   font-size: 12px;
   position: absolute;
@@ -763,13 +823,51 @@ span {
   text-transform: uppercase;
   margin-left: 45px;
 }
+.overlay .sidebar__link:hover {
+  color: #000;
+}
 .overlay .sidebar__socials {
   display: flex;
   justify-content: space-between;
   margin: auto auto 0 auto;
   gap: 15px;
 }
+.overlay .sidebar__social-link--github:hover svg path {
+  fill: #fff;
+}
+.overlay .sidebar__social-link--instagram:hover {
+  background: #000;
+  height: 20px;
+  border-radius: 3px;
+}
+.overlay .sidebar__social-link--instagram:hover svg path {
+  fill: var(--brand-color);
+}
+.overlay .sidebar__social-link--facebook:hover svg path {
+  fill: #0866FF;
+}
 .overlay .sidebar__social-link img {
   width: 24px;
   height: 24px;
+}
+
+@keyframes scaleCircle {
+  from {
+    width: 5px;
+    height: 5px;
+  }
+  to {
+    width: 300px;
+    height: 300px;
+  }
+}
+@keyframes scaleDownCircle {
+  from {
+    width: 300px;
+    height: 300px;
+  }
+  to {
+    width: 5px;
+    height: 5px;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
 const burgerMenu = document.querySelector('.burger-btn');
 const overlay = document.querySelector('.overlay');
 const closeButton = document.querySelector('.sidebar__close-btn');
-// console.log('Клик по бургеру:', burgerMenu);
 
 burgerMenu.addEventListener('click', () => {
   overlay.classList.add('active');
@@ -56,11 +55,11 @@ document.querySelector(".contacts__form").addEventListener("submit", function(ev
 
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   if (email.value.trim() === "") {
-    emailError.textContent = "Пожалуйста, введите ваш email";
+    emailError.textContent = "Пожалуйста, введите ваш e-mail";
     emailError.style.display = "block";
     isValid = false;
   } else if (!emailPattern.test(email.value)) {
-    emailError.textContent = "Введите корректный email";
+    emailError.textContent = "Введите корректный e-mail";
     emailError.style.display = "block";
     isValid = false;
   }
