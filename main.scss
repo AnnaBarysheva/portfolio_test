@@ -81,6 +81,39 @@ body {
     overflow: hidden;
   }
 }
+
+
+.socials {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateX(-40%) rotate(-90deg); 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 0;
+
+&__line {
+  width: 70px;
+  height: 0px;
+  background-color: #000;
+  margin: 10px 0;
+  border: 2px solid rgb(0, 0, 0);
+}
+&__social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+}
+
+
+
+
+
+
+
 .main {
   display: flex;
   flex-direction: column;
@@ -98,6 +131,7 @@ h1 {
 }
 
 .promo {
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
